@@ -18,7 +18,7 @@ public class ChangeCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.isOp()) {
+        if (!sender.hasPermission(Config.CHANGE_PERM)) {
             sender.sendMessage(Config.MSG_NO_PERM);
             return true;
         }

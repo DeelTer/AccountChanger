@@ -34,6 +34,9 @@ public class Config {
     public static String MSG_PLAYER_NOT_WHITELISTED;
     public static String MSG_SUCCESS;
 
+    /* Permissions */
+    public static String CHANGE_PERM;
+
 
     public static void reload() {
         AccountChanger.getInstance().reloadConfig();
@@ -70,6 +73,9 @@ public class Config {
         MSG_PLAYER_BANNED = Colors.set(messages.getString("player-banned"));
         MSG_PLAYER_NOT_WHITELISTED = Colors.set(messages.getString("player-whitelist"));
         MSG_SUCCESS = Colors.set(messages.getString("success"));
+
+        /* Permissions */
+        CHANGE_PERM = config.getString("permission");
 
     }
 }

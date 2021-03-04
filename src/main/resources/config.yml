@@ -11,6 +11,8 @@
 #TWITTER: twitter.com/roma200315
 #YOUTUBE: www.youtube.com/channel/UCRACU2JfOfClrlEHImv5pYw
 
+permission: "accountchanger.change"
+
 settings:
   #If the player is blocked, then do not execute the command
   check-banned: true
