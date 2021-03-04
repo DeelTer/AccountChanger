@@ -1,0 +1,17 @@
+name: AccountChanger
+version: ${project.version}
+main: ru.deelter.accountchanger.AccountChanger
+api-version: 1.16
+
+prefix: AccountChanger
+authors: [ DeelTer, OsterMiner ]
+description: Change accounts of your players
+website: https://vk.com/deelter
+
+loadbefore: [ MyRequests ]
+softdepend: [ MyRequests ]
+
+commands:
+  changer:
+    aliases: [ accountchanger, ac ]
+    usage: /command <args>

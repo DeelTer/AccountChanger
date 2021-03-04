@@ -1,0 +1,44 @@
+####################################################
+#                                                  #
+#                | ACCOUNT_CHANGER |               #
+#                                                  #
+####################################################
+
+#Contact with me:
+#
+#VK: vk.com/deelter
+#DISCORD: DeelTer#4782
+#TWITTER: twitter.com/roma200315
+#YOUTUBE: www.youtube.com/channel/UCRACU2JfOfClrlEHImv5pYw
+
+settings:
+  #If the player is blocked, then do not execute the command
+  check-banned: true
+  check-whitelist: true
+
+  #What files exactly do you want to transfer to your new account
+  inventory-transfer: true
+  statistic-transfer: true
+  advancements-transfer: true
+
+api:
+  myrequests:
+    enable: true
+
+    #Placeholders:
+    # %NAME% - old name | %NAME2% - new name %UUID% - old UUID | %UUID2% - new UUID
+    run-requests:
+      - "request1"
+
+messages:
+  no-permission: "&6Смена ника&f недостаточно прав"
+  reload: "&6Смена ника&f конфигурация перезагружена"
+  help: "&6/changer&f [старый UUID] [новый UUID]"
+  invalid-uuid: "&6Смена ника&f один из UUID указан неверно"
+
+  player-not-exist: "&6Смена ника&f данный игрок не существует или ни разу не появлялся на сервере"
+  player-banned: "&6Смена ника&f игрок заблокирован"
+  player-online: "&6Смена ника&f конфигурация перезагружена"
+  player-whitelist: "&6Смена ника&f конфигурация перезагружена"
+
+  success: "&6Смена ника&f вы успешно сменили аккаунт &6%NAME%&f на &6%NAME2%"
