@@ -1,4 +1,4 @@
-<img src="https://sun9-13.userapi.com/IBRDysv-LR-m_2FyihI86kXLHyA2vbvyopYZ0A/P1jNGzDqzrc.jpg" alt="DeelTer Face" align="right">
+<img src="https://sun9-15.userapi.com/impg/A4hAa1EhVPHHeStQ-IUGFPTLCc2yzu1BahvFBw/Y328n-6H25Y.jpg?size=600x600&quality=96&sign=7e05b3a3c619ce21ac3d1aaf65a7678a&type=album" alt="DeelTer Face" align="right">
 <div align="center">
   <h1>AccountChanger</h1>
   <h3>Transferring an account from the old UUID to the new one</h3>
