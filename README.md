@@ -8,7 +8,7 @@
 </div>
 
 <div align="center">
-  <h2>Commands</h2>
+  <div align="left"><h2>Commands</h2></div>
     <div align="left">
       <p>● /accountchanger reload - Reload config<br>● /accountchanger [UUID1] [UUID2] - Transfer command<br></p>
     </div>
