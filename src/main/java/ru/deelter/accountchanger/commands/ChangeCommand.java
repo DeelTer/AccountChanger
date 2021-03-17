@@ -7,7 +7,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import ru.deelter.accountchanger.Config;
-import ru.deelter.accountchanger.utils.Colors;
 import ru.deelter.myrequests.utils.MyRequest;
 
 import java.io.File;
@@ -44,7 +43,7 @@ public class ChangeCommand implements CommandExecutor {
         final String name = player.getName();
 
         if (!player.hasPlayedBefore()) {
-            sender.sendMessage(Colors.set(Config.MSG_PLAYER_NOT_EXIST));
+            sender.sendMessage(Config.MSG_PLAYER_NOT_EXIST);
             return true;
         }
 
