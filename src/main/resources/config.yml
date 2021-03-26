@@ -25,7 +25,7 @@ settings:
 
 api:
   myrequests:
-    enable: true
+    enable: false
 
     #Placeholders:
     # %NAME% - old name | %NAME2% - new name %UUID% - old UUID | %UUID2% - new UUID
