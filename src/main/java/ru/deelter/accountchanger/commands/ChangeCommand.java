@@ -22,7 +22,12 @@ public class ChangeCommand implements CommandExecutor {
             return true;
         }
 
-        if (args[0] != null && args[0].equalsIgnoreCase("RELOAD")) {
+        if (args.length < 1) {
+            sender.sendMessage(Config.MSG_HELP);
+            return true;
+        }
+
+        if (args[0].equalsIgnoreCase("RELOAD")) {
             sender.sendMessage(Config.MSG_RELOAD);
             Config.reload();
         }
