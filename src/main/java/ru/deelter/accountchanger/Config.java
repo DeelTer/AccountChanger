@@ -16,6 +16,7 @@ public class Config {
     public static boolean MY_REQUESTS_ENABLE = false;
     public static boolean CHECK_BANNED;
     public static boolean CHECK_WHITELIST;
+    public static boolean DEBUG = false;
 
     public static boolean INVENTORY_TRANSFER;
     public static boolean STATISTIC_TRANSFER;
@@ -48,6 +49,8 @@ public class Config {
 
         /* Settings */
         FileConfiguration config = plugin.getConfig();
+        DEBUG = config.getBoolean("debug");
+
         ConfigurationSection settings = config.getConfigurationSection("settings");
         CHECK_BANNED = settings.getBoolean("check-banned");
         CHECK_WHITELIST = settings.getBoolean("check-whitelist");

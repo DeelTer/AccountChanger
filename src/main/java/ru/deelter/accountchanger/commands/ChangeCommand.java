@@ -5,8 +5,8 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-
 import ru.deelter.accountchanger.Config;
+import ru.deelter.accountchanger.utils.Console;
 import ru.deelter.myrequests.utils.MyRequest;
 
 import java.io.File;
@@ -30,6 +30,7 @@ public class ChangeCommand implements CommandExecutor {
         if (args[0].equalsIgnoreCase("RELOAD")) {
             sender.sendMessage(Config.MSG_RELOAD);
             Config.reload();
+            return true;
         }
 
         if (args.length < 2) {
@@ -45,7 +46,7 @@ public class ChangeCommand implements CommandExecutor {
         /* Change process */
         UUID uuid = UUID.fromString(args[0]);
         OfflinePlayer player = Bukkit.getOfflinePlayer(uuid);
-        final String name = player.getName();
+        String name = player.getName();
 
         if (!player.hasPlayedBefore()) {
             sender.sendMessage(Config.MSG_PLAYER_NOT_EXIST);
@@ -69,7 +70,7 @@ public class ChangeCommand implements CommandExecutor {
 
         UUID uuid2 = UUID.fromString(args[1]);
         OfflinePlayer player2 = Bukkit.getOfflinePlayer(uuid2);
-        final String name2 = player2.getName();
+        String name2 = player2.getName() == null ? "[Неизвестен]" : player2.getName();
 
         if (player2.isOnline()) {
             sender.sendMessage(Config.MSG_PLAYER_ONLINE);
@@ -108,23 +109,30 @@ public class ChangeCommand implements CommandExecutor {
         /* Inventory files */
         String world = Bukkit.getWorldContainer().getPath() + "/world";
         if (Config.INVENTORY_TRANSFER)
-            renameFileTo(world + "/playerdata/" + uuid, uuid2, ".dat");
+            renameFileTo(world + "/playerdata/", uuid, uuid2, ".dat");
 
         /* Statistic files */
         if (Config.STATISTIC_TRANSFER)
-            renameFileTo(world + "/stats/" + uuid, uuid2, ".json");
+            renameFileTo(world + "/stats/", uuid, uuid2, ".json");
 
         /* Advancements files */
         if (Config.ADVANCEMENTS_TRANSFER)
-            renameFileTo(world + "/advancements/" + uuid, uuid2, ".json");
+            renameFileTo(world + "/advancements/", uuid, uuid2, ".json");
     }
 
     /** Renames the old player file to the new one */
-    private void renameFileTo(String from, String to, String format) {
-        File file = new File(from + format);
+    private void renameFileTo(String dir, String from, String to, String format) {
+        File file = new File(dir + from + format);
         if (!file.exists())
             return;
 
+        File file2 = new File(dir + to + format);
+        if (file2.exists()) {
+            Console.debug("Дебаг&f удаление старого файла");
+            file2.delete();
+        }
+
         file.renameTo(new File(file.getParent() + "/" + to + format));
+        Console.debug("Дебаг&f переименовываем " + from + " в " + to);
     }
 }
